@@ -2,6 +2,8 @@ import { ReactComponent as ArrowUp } from "../../images/icons/arrow-up.svg";
 import { ReactComponent as ArrowDown } from "../../images/icons/arrow-down.svg";
 import { ReactComponent as ArrowNull } from "../../images/icons/arrow-dot.svg";
 
+import PropTypes from "prop-types";
+
 import {
   ChangeContainer,
   ChangeUp,
@@ -51,6 +53,10 @@ const PriceChanger = ({ changePrice }) => {
       {PRICE_LOADING && <ChangeLoading>Loading...</ChangeLoading>}
     </ChangeContainer>
   );
+};
+
+PriceChanger.propTypes = {
+  changePrice: PropTypes.number,
 };
 
 export default PriceChanger;

@@ -5,6 +5,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
+import PropTypes from "prop-types";
 import PriceChanger from "../PriceChanger/PriceChanger";
 
 const TableTrade = ({ tickers }) => {
@@ -41,6 +42,24 @@ const TableTrade = ({ tickers }) => {
       </Table>
     </TableContainer>
   );
+};
+
+Table.propTypes = {
+  tickers: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.shape({
+        ticker: PropTypes.string,
+        exchange: PropTypes.string,
+        price: PropTypes.number,
+        change: PropTypes.number,
+        change_percent: PropTypes.number,
+        dividend: PropTypes.number,
+        yield: PropTypes.number,
+        last_trade_time: PropTypes.string,
+        changePrice: PropTypes.number,
+      })
+    )
+  ),
 };
 
 export default TableTrade;
